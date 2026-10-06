@@ -115,8 +115,17 @@ footer {
 }
 
 .site-header {
-  max-width: var(--container-width);
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 24px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .site-logo {
@@ -126,9 +135,11 @@ footer {
 }
 
 .site-nav__list {
-  padding: 0;
-  margin: var(--space-md) 0 0;
+  display: flex;
+  gap: 24px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .site-nav__list li {
@@ -148,6 +159,7 @@ footer {
 }
 
 .hero {
+  text-align: center;
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
   padding: var(--space-xl) var(--space-lg);
@@ -186,6 +198,22 @@ footer {
   padding: var(--space-md);
   border-left: 4px solid var(--color-primary);
   background-color: var(--color-surface);
+}
+
+.advantages-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.advantages-list li {
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
 }
 
 /* ===============================
@@ -269,4 +297,29 @@ footer {
   padding: var(--space-md);
   border-left: 4px solid var(--color-success);
   background-color: var(--color-success-bg);
+}
+
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
 }
