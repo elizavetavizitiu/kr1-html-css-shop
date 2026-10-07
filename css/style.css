@@ -192,6 +192,17 @@ footer {
   margin-top: 0;
 }
 
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+/* Убираем нижний отступ у карточек внутри сетки */
+.products-grid .product-card {
+  margin-bottom: 0;
+}
+
 .aside-info {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
@@ -343,6 +354,9 @@ html {
 
 .catalog-products {
   grid-area: products;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
 }
 
 .filters-form {
