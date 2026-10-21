@@ -128,7 +128,7 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.site-logo {
+.site-header__logo {
   font-weight: bold;
   text-decoration: none;
   color: var(--color-text);
@@ -317,14 +317,15 @@ footer {
   color: var(--color-muted);
 }
 
-.breadcrumbs a {
+.breadcrumbs__link {
   color: var(--color-primary);
 }
 
-.breadcrumbs span::before {
+.breadcrumbs__current::before {
   content: " / ";
   color: var(--color-muted);
 }
+
 
 html {
   scroll-behavior: smooth;
