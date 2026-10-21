@@ -71,3 +71,18 @@ orderForm.addEventListener('submit', (event) => {
   // Закрываем модальное окно.
   orderDialog.close();
 });
+const toTop = document.getElementById('toTop');
+
+if (toTop) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      toTop.classList.add('is-visible');
+    } else {
+      toTop.classList.remove('is-visible');
+    }
+  });
+
+  toTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}

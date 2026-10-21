@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Учебный интернет-магазин</title>
+  <title>Вязанные товары ручной работы</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
   <header>
   <div class="site-header">
-    <a class="site-header__logo" href="index.html">ShopProject</a>
+    <a class="site-header__logo" href="index.html">VIZZUFFY</a>
 
     <nav class="site-nav" aria-label="Основная навигация">
   <ul class="site-nav__list">
@@ -29,55 +29,66 @@
 
   <main>
     <section class="hero">
-    <h1>Учебный интернет-магазин</h1>
+    <h1>Тепло, связанное вручную</h1>
     <p>
-    Это стартовая страница учебного frontend-проекта.
-    В дальнейшем на её основе будет разработан многостраничный сайт
-    интернет-магазина или каталога услуг.
+    Сумки и свитеры из натуральной пряжи для тех, кто ценит уют и уникальные вещи.
     </p>
     <a class="button" href="#popular">Перейти к товарам</a>
   </section>
 
 <section class="section" id="advantages">
-  <h2>Преимущества проекта</h2>
+  <h2>Почему VIZZUFFY?</h2>
 
   <ul class="advantages-list">
-    <li>понятная HTML-структура;</li>
-    <li>семантические блоки страницы;</li>
-    <li>подключение внешнего CSS-файла;</li>
-    <li>подготовка к разработке многостраничного сайта.</li>
+    <li>Каждое изделие связано вручную — без шаблонов и массового производства.</li>
+    <li>Мягкие и тёплые материалы, приятные к телу и безопасные для кожи.</li>
+    <li>Спокойные цвета и аккуратная вязка — вещи, которых не встретишь в масс-маркете.</li>
+    <li>Выбираете товар на сайте, оставляете заявку — и мы связываемся с вами для уточнения деталей.</li>
   </ul>
 </section>
 <section class="section" id="popular">
   <h2>Популярные товары</h2>
   <div class = "products-grid">
+  <article class="product-card" data-category="bags">
+        <img class="card-image" src="https://cs5.livemaster.ru/storage/0d/b0/7f0f68cb4814e8815391e8f4b6gt--sumki-sumka-vyazanaya-ruchnoj-raboty-hlopok-chernaya.jpg">
+        <h3>Крутая сумка</h3>
+        <p>Лёгкая, вместительная и тёплая — подойдёт для телефона, кошелька и косметички. Связана вручную, держит форму и сочетается с повседневными и романтичными образами.</p>
+        <p>Цена: 3000 руб.</p>
+    <button class="button product-card__button" type="button" data-product="Товар 1">
+  Заказать
+  </button>
+  </article>
   <article class="product-card">
-    <h3>Товар 1</h3>
-    <p>Краткое описание учебного товара.</p>
-    <p>Цена: 1000 руб.</p>
+        <img class="card-image" src="https://cs1.livemaster.ru/storage/8c/08/1058fa3f1de74f67e6e8a7ef3c9y--odezhda-vyazanyj-sviter-iz-100-procent-peruanskoj-shersti.jpg">
+        <h3>Объемный свитер</h3>
+        <p>Уютный свитер крупной вязки с объёмным силуэтом. Приятный к телу, не колется и держит форму после стирки. Отличный выбор для дома, прогулок и встреч с друзьями.</p>
     <button class="button product-card__button" type="button" data-product="Товар 1">
   Заказать
 </button>
-
-  </article>
-
-  <article class="product-card">
-    <h3>Товар 2</h3>
-    <p>Краткое описание учебного товара.</p>
-    <p>Цена: 1500 руб.</p>
-    <button class="button product-card__button" type="button" data-product="Товар 1">
-  Заказать
-</button>
-
-  </article>
+</article>
 
   <article class="product-card">
-    <h3>Товар 3</h3>
-    <p>Краткое описание учебного товара.</p>
-    <p>Цена: 2000 руб.</p>
+        <img class="card-image" src="https://img-edg.joomcdn.net/0bfc8eba65635ffcc737f20ed9cdea19465d0588_original.jpeg">
+        <h3>Оверсайз-джемпер</h3>
+        <p>Мягкий вязаный свитер свободного кроя. Тёплый, но не тяжёлый — идеален для прохладной погоды. Хорошо сочетается с джинсами и юбками, подходит для повседневных образов.</p>
     <button class="button product-card__button" type="button" data-product="Товар 1">
     Заказать
     </button>
+  </article>
+</section>
+<section class="section" id="rewiev">
+  <h2>Отзывы наших клиентов</h2>
+  <article class="otziv">
+    <h3>Ирина ★★★★★</h3>
+    <p>Заказывала сумку — пришла очень аккуратно связанная, мягкая и вместительная. Ношу каждый день, форма не потерялась. Очень довольна!</p>
+  </article>
+  <article class="otziv">
+    <h3>Анастасия ★★★★★</h3>
+    <p>Свитер тёплый, но не тяжёлый, приятный к телу и не колется. Цвет точно как на фото. Видно, что связано вручную и с любовью.</p>
+  </article>
+  <article class="otziv">
+    <h3>Мария ★★★★☆</h3>
+    <p>Вещь красивая и аккуратная, доставка заняла чуть больше времени, чем ожидала. Но результат того стоит — обязательно закажу ещё.</p>
   </article>
 </section>
 </div>

@@ -7,11 +7,11 @@
   --color-bg: #ffffff;
   --color-text: #222222;
   --color-muted: #666666;
-  --color-primary: #0057b8;
-  --color-primary-dark: #003f86;
-  --color-border: #dddddd;
+  --color-primary: #a0714a;
+  --color-primary-dark: #612809;
+  --color-border: #dbc69c;
   --color-surface: #f7f7f7;
-  --color-surface-accent: #eef5ff;
+  --color-surface-accent: #fff4ee;
   --color-danger: #b00020;
   --color-success: #168a2f;
   --color-success-bg: #eefaf0;
@@ -360,6 +360,16 @@ html {
   gap: var(--space-md);
 }
 
+.card-image {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 8px;
+}
+
 .filters-form {
   display: grid;
   gap: var(--space-md);
@@ -388,3 +398,4 @@ html {
   border-radius: var(--radius-sm);
   font: inherit;
 }
+
