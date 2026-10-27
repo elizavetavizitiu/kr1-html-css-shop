@@ -6,6 +6,7 @@
   <meta name="description" content="Каталог товаров учебного интернет-магазина.">
   <title>Каталог товаров — Вязанные товары ручной работы</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header>
@@ -34,25 +35,35 @@
   <aside class="catalog-filters">
     <h2>Фильтры</h2>
 
-    <form class="filters-form" action="#" method="get">
+    <form class="filters-form" id="catalog-filter-form">
       <fieldset>
-        <legend>Категория</legend>
+        
+<fieldset>
+  <legend>Категория</legend>
 
-        <label>
-          <input type="checkbox" name="category" value="all">
-          Все товары
-        </label>
+  <label>
+    <input type="radio"
+           name="category"
+           value="all"
+           checked>
+    Все товары
+  </label>
 
-        <label>
-          <input type="checkbox" name="category" value="popular">
-          Популярные
-        </label>
+  <label>
+    <input type="radio"
+           name="category"
+           value="popular">
+    Популярные
+  </label>
 
-        <label>
-          <input type="checkbox" name="category" value="new">
-          Новинки
-        </label>
-      </fieldset>
+  <label>
+    <input type="radio"
+           name="category"
+           value="new">
+    Новинки
+  </label>
+</fieldset>
+
 
       <fieldset>
         <legend>Цена</legend>
@@ -65,53 +76,127 @@
       </fieldset>
 
       <button class="button" type="submit">Применить</button>
+      <button class="button" type="reset">
+        Сбросить
+      </button>
     </form>
   </aside>
 
   <section class="catalog-products">
     <h2>Список товаров</h2>
+    <p id="filter-result">
+  Найдено товаров: 6
+</p>
 
     <div class="products-grid">
-      <article class="product-card" data-category="bags">
-        <img class="card-image" src="https://i.pinimg.com/originals/63/60/b8/6360b8467e60aa4ae4e73cc562774100.jpg?nii=t">
+<article class="product-card" data-category="popular" data-price="2500"> 
+         <img class="card-image" src="https://i.pinimg.com/originals/63/60/b8/6360b8467e60aa4ae4e73cc562774100.jpg?nii=t">
         <h3>Сумка Мур-мур</h3>
         <p>Мягкая вязаная сумка в нежном серо-розовом цвете. Вместительная, лёгкая и тёплая — идеальный аксессуар для повседневных образов и прохладной погоды.</p>
         <p>Цена: 2500 руб.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
+        
+<details class="product-details">
+  <summary>Подробнее о товаре</summary>
+
+  <p><strong>Материал:</strong> мягкая пряжа.</p>
+  <p><strong>Цвет:</strong> серо-розовый.</p>
+  <p><strong>Особенности:</strong> ручная вязка,
+    удобная форма, небольшой вес.</p>
+  <p><strong>Уход:</strong> бережная ручная стирка,
+    сушка в горизонтальном положении.</p>
+</details>
+
       </article>
 
-      <article class="product-card" data-category="bags">
-        <img class="card-image" src="https://cs5.livemaster.ru/storage/0d/b0/7f0f68cb4814e8815391e8f4b6gt--sumki-sumka-vyazanaya-ruchnoj-raboty-hlopok-chernaya.jpg">
+<article class="product-card" data-category="popular" data-price="3000">        <img class="card-image" src="https://cs5.livemaster.ru/storage/0d/b0/7f0f68cb4814e8815391e8f4b6gt--sumki-sumka-vyazanaya-ruchnoj-raboty-hlopok-chernaya.jpg">
         <h3>Крутая сумка</h3>
         <p>Лёгкая, вместительная и тёплая — подойдёт для телефона, кошелька и косметички. Связана вручную, держит форму и сочетается с повседневными и романтичными образами.</p>
         <p>Цена: 3000 руб.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
+       
+<details class="product-details">
+  <summary>Подробнее о товаре</summary>
+
+  <p><strong>Цвет:</strong> чёрный.</p>
+  <p><strong>Особенности:</strong> ручная вязка,
+    вместительность и удобные ручки.</p>
+  <p><strong>Назначение:</strong> для повседневного
+    использования.</p>
+  <p><strong>Уход:</strong> деликатная стирка
+    и горизонтальная сушка.</p>
+</details>
+
       </article>
 
-      <article class="product-card" data-category="bags">
-        <img class="card-image" src="https://i.pinimg.com/originals/f4/cf/68/f4cf68cd416b99ff69c594500c74210a.webp?nii=t">
+<article class="product-card" data-category="new" data-price="1500">        <img class="card-image" src="https://i.pinimg.com/originals/f4/cf/68/f4cf68cd416b99ff69c594500c74210a.webp?nii=t">
         <h3>Сумка-шоппер</h3>
         <p>Аккуратная вязаная сумка ручной работы. Плотная вязка сохраняет форму, а удобная ручка позволяет носить её на плече или в руке. Вместит всё необходимое на каждый день и станет уютным акцентом в любом образе.</p>
         <p>Цена: 1500 руб.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
+        
+<details class="product-details">
+  <summary>Подробнее о товаре</summary>
+
+  <p><strong>Тип:</strong> вязаная сумка-шоппер.</p>
+  <p><strong>Особенности:</strong> плотная вязка,
+    удобные ручки, вместительность.</p>
+  <p><strong>Назначение:</strong> прогулки,
+    покупки и повседневные образы.</p>
+  <p><strong>Уход:</strong> бережная стирка.</p>
+</details>
+
       </article>
-      <article class="product-card" data-category="sweater">
-        <img class="card-image" src="https://img-edg.joomcdn.net/0bfc8eba65635ffcc737f20ed9cdea19465d0588_original.jpeg">
+<article class="product-card" data-category="new" data-price="">
+          <img class="card-image" src="https://img-edg.joomcdn.net/0bfc8eba65635ffcc737f20ed9cdea19465d0588_original.jpeg">
         <h3>Оверсайз-джемпер</h3>
         <p>Мягкий вязаный свитер свободного кроя. Тёплый, но не тяжёлый — идеален для прохладной погоды. Хорошо сочетается с джинсами и юбками, подходит для повседневных образов.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
+        
+<details class="product-details">
+  <summary>Подробнее о товаре</summary>
+
+  <p><strong>Фасон:</strong> свободный оверсайз.</p>
+  <p><strong>Особенности:</strong> мягкая вязка,
+    комфортная посадка.</p>
+  <p><strong>Сочетания:</strong> джинсы, брюки,
+    юбки.</p>
+  <p><strong>Уход:</strong> деликатная стирка,
+    сушка на горизонтальной поверхности.</p>
+</details>
+
       </article>
-      <article class="product-card" data-category="sweater">
-        <img class="card-image" src="https://cs1.livemaster.ru/storage/8c/08/1058fa3f1de74f67e6e8a7ef3c9y--odezhda-vyazanyj-sviter-iz-100-procent-peruanskoj-shersti.jpg">
+<article class="product-card" data-category="popular" data-price="">
+          <img class="card-image" src="https://cs1.livemaster.ru/storage/8c/08/1058fa3f1de74f67e6e8a7ef3c9y--odezhda-vyazanyj-sviter-iz-100-procent-peruanskoj-shersti.jpg">
         <h3>Объемный свитер</h3>
         <p>Уютный свитер крупной вязки с объёмным силуэтом. Приятный к телу, не колется и держит форму после стирки. Отличный выбор для дома, прогулок и встреч с друзьями.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
+        
+<details class="product-details">
+  <summary>Подробнее о товаре</summary>
+
+  <p><strong>Фасон:</strong> объёмный.</p>
+  <p><strong>Особенности:</strong> крупная вязка,
+    мягкая фактура и уютный силуэт.</p>
+  <p><strong>Назначение:</strong> прохладная
+    погода и повседневная носка.</p>
+  <p><strong>Уход:</strong> бережная стирка,
+    хранение в сложенном виде.</p>
+</details>
+
       </article>
-      <article class="product-card" data-category="sweater">
-        <img class="card-image" src="https://cs2.livemaster.ru/storage/fe/89/ee93f611ab45e51d68b97ccb25lg--odezhda-vyazanyj-sviter-iz-kid-mohera-s-vyrezom.jpg">
+<article class="product-card" data-category="new" data-price="">
+          <img class="card-image" src="https://cs2.livemaster.ru/storage/fe/89/ee93f611ab45e51d68b97ccb25lg--odezhda-vyazanyj-sviter-iz-kid-mohera-s-vyrezom.jpg">
         <h3>Классический свитер</h3>
         <p>Классический вязаный свитер с аккуратной посадкой. Тонкая пряжа делает его лёгким и удобным, а спокойный цвет легко вписывается в любой гардероб. Подойдёт и для офиса, и для повседневной носки.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
+        
+<details class="product-details">
+  <summary>Подробнее о товаре</summary>
+
+  <p><strong>Фасон:</strong> классический.</p>
+  <p><strong>Особенности:</strong> аккуратная
+    посадка и лаконичный дизайн.</p>
+  <p><strong>Назначение:</strong> офис,
+    учёба и повседневная носка.</p>
+  <p><strong>Уход:</strong> деликатная стирка
+    и горизонтальная сушка.</p>
+</details>
+
       </article>
     </div>
   </section>
@@ -137,6 +222,14 @@
     <p>&copy; 2026 Учебный проект. Все права защищены.</p>
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
-<button class="to-top" id="toTop" type="button" aria-label="Наверх">↑</button>
+
+<button
+  class="back-to-top"
+  id="back-to-top"
+  type="button"
+  aria-label="Наверх">
+  ↑
+</button>
+
 </body>
 </html>

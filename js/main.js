@@ -25,9 +25,11 @@ orderButtons.forEach((button) => {
 });
 
 // Закрываем модальное окно по кнопке «Закрыть».
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.close();
-});
+if (closeDialogButton && orderDialog) {
+  closeDialogButton.addEventListener('click', () => {
+    orderDialog.close();
+  });
+}
 // Получаем форму заявки.
 const orderForm = document.getElementById('order-form');
 
@@ -35,6 +37,7 @@ const orderForm = document.getElementById('order-form');
 const successMessage = document.getElementById('success-message');
 
 // Обрабатываем отправку формы.
+if (orderForm && successMessage && orderDialog) {
 orderForm.addEventListener('submit', (event) => {
   // Отменяем стандартную отправку формы,
   // потому что backend пока не подключён.
@@ -71,18 +74,97 @@ orderForm.addEventListener('submit', (event) => {
   // Закрываем модальное окно.
   orderDialog.close();
 });
-const toTop = document.getElementById('toTop');
+}
+/* Фильтрация товаров */
 
-if (toTop) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      toTop.classList.add('is-visible');
-    } else {
-      toTop.classList.remove('is-visible');
-    }
+const filterForm = document.getElementById(
+  'catalog-filter-form'
+);
+
+if (filterForm) {
+  const products = document.querySelectorAll(
+    '.catalog-products .product-card'
+  );
+
+  const result = document.getElementById(
+    'filter-result'
+  );
+
+  function applyFilters() {
+    const category = filterForm.querySelector(
+      'input[name="category"]:checked'
+    ).value;
+
+    const from = document.getElementById(
+      'price-from'
+    ).value;
+
+    const to = document.getElementById(
+      'price-to'
+    ).value;
+
+    let count = 0;
+
+    products.forEach((product) => {
+      const productCategory = product.dataset.category;
+      const productPrice = product.dataset.price;
+
+      const categoryMatches =
+        category === 'all' ||
+        category === productCategory;
+
+      const priceMatches =
+        (from === '' && to === '') ||
+        (productPrice !== '' &&
+          (from === '' || Number(productPrice) >= Number(from)) &&
+          (to === '' || Number(productPrice) <= Number(to)));
+
+      if (categoryMatches && priceMatches) {
+        product.hidden = false;
+        count++;
+      } else {
+        product.hidden = true;
+      }
+    });
+
+    result.textContent = 'Найдено товаров: ' + count;
+  }
+
+  filterForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    applyFilters();
   });
 
-  toTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  filterForm.addEventListener('reset', () => {
+    requestAnimationFrame(applyFilters);
+  });
+}
+
+/* Кнопка наверх */
+
+const backToTop = document.getElementById(
+  'back-to-top'
+);
+
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+
+    if (window.scrollY > 250) {
+      backToTop.classList.add(
+        'back-to-top--visible'
+      );
+    } else {
+      backToTop.classList.remove(
+        'back-to-top--visible'
+      );
+    }
+
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
 }

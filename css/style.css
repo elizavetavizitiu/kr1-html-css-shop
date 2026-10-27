@@ -176,6 +176,12 @@ footer {
   margin-top: 0;
 }
 
+.otziv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
 .product-card {
   margin-bottom: var(--space-md);
   padding: var(--space-md);
@@ -351,6 +357,10 @@ html {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-surface);
+  position: sticky;
+  top: 85px;
+  align-self: start;
+
 }
 
 .catalog-products {
@@ -399,3 +409,92 @@ html {
   font: inherit;
 }
 
+
+/* Подробное описание товаров */
+
+.product-details {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+}
+
+.product-details summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--color-primary-dark);
+}
+
+.product-details p {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Скрытые товары */
+
+.product-card[hidden] {
+  display: none;
+}
+
+#filter-result {
+  color: var(--color-muted);
+  margin-bottom: 15px;
+}
+
+/* Часто задаваемые вопросы */
+
+.faq details {
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--color-primary-dark);
+}
+
+.faq details[open] {
+  background-color: var(--color-surface-accent);
+}
+
+.faq p {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Кнопка наверх */
+
+.back-to-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 26px;
+
+  cursor: pointer;
+  z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.back-to-top--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-primary-dark);
+}
